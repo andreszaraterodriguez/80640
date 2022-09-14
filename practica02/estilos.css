@@ -1,0 +1,32 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+#span2{
+    color: green;
+}
+#span1{
+    /* margin: 100px;
+    padding: 100px; */
+    color: black;
+}
+
+p span {
+    color: darksalmon;
+}
+
+.fuente{
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+}
+
+span::after {
+    content: "\A""\A"; white-space: pre;
+}
+a:hover {
+    color: hotpink;
+  }
+  h3:hover {
+    color: hotpink;
+  }
+ 
+ 
