@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ejemplo5</title>
+    <style>
+        *{
+            color: white;
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            text-align: center;
+
+        }
+        .header{
+            background-color: olive;
+            height: 26vh;
+           
+        }
+        .menu{
+            background-color: blue;
+            height: 7vh;
+           
+        }
+    
+        .contenido{
+            background-color: maroon; display: inline-block;
+            height: 60vh;
+            width: 150vw;
+            
+        }
+
+        .publicidad{
+            background-color: aqua; display: inline;
+            height: 60vh;
+            width: 30vw;
+            
+        }
+        
+        .pie{
+            background-color: blue;
+            height: 7vh;
+            
+        }
+        .superpadre{
+            display: flex;
+        }
+
+    </style>
+</head>
+
+<body>
+    <div class="padre header">header</div>
+    <div class="padre menu">menu</div>
+    <div class="superpadre">
+        <div class="padre contenido">contenido</div>
+        <div class="padre publicidad">publicidad</div>
+    </div>
+   
+    <div class="padre pie">pie</div>
+</body>
+</html> 

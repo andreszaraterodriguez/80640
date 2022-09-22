@@ -11,16 +11,16 @@
     margin-right: auto;
 } */
 
-.padre{
+/* .padre{
     background-color: orangered;
     margin: 10px;
     padding: 10px;
     display: flex;
     flex-wrap: wrap;
-}
+} */
 .hijo{
     background-color: blue;
-    width: 200px;
+    width: 30px;
     margin: 10px;
 }
 img {
