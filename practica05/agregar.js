@@ -53,6 +53,9 @@ function buscarFor() {
         for (const tarea in listaTodo ){
             if (Object.hasOwnProperty.call(listaTodo, tarea)) {
                 console.log(listaTodo[tarea].childNodes[0])
+              //  a=listaTodo[tarea]
+
+
                 if (leer() ==listaTodo [tarea].childNodes[0]) 
                     console.log("ya esicste")
                 else{
