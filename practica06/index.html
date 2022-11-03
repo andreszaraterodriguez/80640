@@ -5,8 +5,33 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
+
+    <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
 </head>
 <body>
-    
+    <form action="" method="">
+        <input type="text", id="email", placeholder="email">
+        <input type="password", id="password", placeholder="password" >
+        <button type ="button", id="enviar">enviar</button>
+    </form>
+    <script>
+        var btEnviar = document.getElementById("enviar")
+        btEnviar.addEventListener("click", function () {
+
+            let email = document.getElementById("email").value
+            let password = document.getElementById("password").value
+            axios.post("http://localhost:4567", {
+                email: email,
+                password: password
+            })
+            .then(function (response) {
+                console.log("Respuesta :",response)
+            })
+            .catch(function (error) {
+                console.log("Error :",error)
+            })
+        })
+
+    </script>
 </body>
 </html>
