@@ -9,7 +9,7 @@ public class Conexion {
     private static String username ="root";
     private static String password = "";
     private static Connection connection = null;
-
+//conexion base de datos 
     public static Connection getConnection(){
         try{
             Class.forName(DriverName);

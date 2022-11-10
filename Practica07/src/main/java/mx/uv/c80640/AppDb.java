@@ -22,7 +22,7 @@ public class AppDb {
         usuarios.put(u1.getId(),u1);
         usuarios.put(u2.getId(),u2);
 
-
+ //
         System.out.println( "Hello World!" );
         //before ((req, res)->res.type("aplication/json"));
         get("/usuario",(req,res) -> gson.toJson(u1));
