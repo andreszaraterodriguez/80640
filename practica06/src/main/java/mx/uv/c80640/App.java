@@ -35,11 +35,11 @@ public class App {
             System.out.println(req.queryParams("email") + " " + 
                 req.queryParams("password"));
             System.out.println(req.body());
-            JsonParser escaner = new JsonParser();
-            JsonElement arbol= escaner.parse(req.body());
-            JsonObject peticcionCliente = arbol.getAsJsonObject();
-            System.out.println(peticcionCliente.get("email"));
-            System.out.println(peticcionCliente.get("password"));
+            // JsonParser escaner = new JsonParser();
+            // JsonElement arbol= escaner.parse(req.body());
+            // JsonObject peticcionCliente = arbol.getAsJsonObject();
+            // System.out.println(peticcionCliente.get("email"));
+            // System.out.println(peticcionCliente.get("password"));
             
             res.status(200);// Codigo de respuesta
             JsonObject oRespuesta = new JsonObject();

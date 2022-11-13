@@ -2,6 +2,7 @@ package mx.uv.c80640;
 
 import java.sql.DriverManager;
 import java.sql.SQLException;
+import java.sql.Connection;
 
 public class Conexion {
     private static String url = "jdbc:mysql://127.0.0.1:3306/";
