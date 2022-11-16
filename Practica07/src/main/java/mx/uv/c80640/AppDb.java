@@ -16,17 +16,19 @@ public class AppDb {
     public static void main( String[] args )
     {
         port(80);
+
+        before(req, res) -> res.header
         //inicializacion de datos
-        Usuario u1 = new Usuario("1","samuel", "123456");
-        Usuario u2 = new Usuario("2","alan", "42347");
-        usuarios.put(u1.getId(),u1);
-        usuarios.put(u2.getId(),u2);
+        // Usuario u1 = new Usuario("1","samuel", "123456");
+        // Usuario u2 = new Usuario("2","alan", "42347");
+        // usuarios.put(u1.getId(),u1);
+        // usuarios.put(u2.getId(),u2);
 
  //
         System.out.println( "Hello World!" );
         //before ((req, res)->res.type("aplication/json"));
-        get("/usuario",(req,res) -> gson.toJson(u1));
-        get("/usuarios",(req,res) -> gson.toJson(usuarios));
+        // get("/usuario",(req,res) -> gson.toJson(u1));
+        get("/usuarios", (req, res) -> gson.toJson(DAO.dameUsuarios()));
 
         post("/", (req, res)->{
             String datosFormulario = req.body();

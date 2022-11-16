@@ -5,23 +5,21 @@ import java.sql.SQLException;
 import java.sql.Connection;
 
 public class Conexion {
-    private static String url = "jdbc:mysql://127.0.0.1:3306/";
-    private static String DriverName="com.mysql.jdbc.Driver";
-    private static String username ="root";
+    private static String url = "jdbc:mysql://127.0.0.1:3306/ejemplo80640";
+    private static String DriverName = "com.mysql.jdbc.Driver";
+    private static String username = "root";
     private static String password = "";
     private static Connection connection = null;
-//conexion base de datos 
+
     public static Connection getConnection(){
-        try{
+        try {
             Class.forName(DriverName);
-            connection = DriverManager.getConnection(url, username, password);
-        }catch(SQLException e){
+            connection = (Connection) DriverManager.getConnection(url, username, password);
+        } catch (SQLException e){
             System.out.println(e);
-        }catch(ClassNotFoundException e){
-            System.out.println("no encontro el nombre");
+        } catch (ClassNotFoundException e) {
+            System.out.println("no encontro el driver");
         }
         return connection;
     }
-
-
 }
