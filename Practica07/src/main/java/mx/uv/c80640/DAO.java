@@ -104,5 +104,90 @@ public class DAO {
         return msj;
     }
 
+    public static String actualizaUsuario(Usuario u) {
+        PreparedStatement stm = null;
+        Connection cc = null;
+        String msj = "";
+
+        cc = c.getConnection();
+        try {
+            String sql = "update into usuarios (id, nombre, password) values (?,?,?)";
+            stm = (PreparedStatement) cc.prepareStatement(sql);
+            stm.setString(1, u.getId());
+            stm.setString(2, u.getNombre());
+            stm.setString(3, u.getPassword());
+
+            if (stm.executeUpdate() > 0)
+                msj = "el usuario se actualizo exitosamente ";
+            else
+                msj = "el usuario no se puedo actualizar ";
+        } catch (Exception e) {
+            System.out.println(e);
+        } finally {
+            // vamos a liberar en este bloque todos los recursos empleando
+            // se hace en orden inverso a su creación
+            if (stm != null) {
+                try {
+                    stm.close();
+                } catch (SQLException sqlEx) {
+                    sqlEx.printStackTrace();
+                }
+                stm = null;
+            }
+            try {
+                cc.close();
+                System.out.println("Closed  connection!");
+            } catch (SQLException sqlEx) {
+                sqlEx.printStackTrace();
+            }
+        }
+
+        return msj;
+    }
+
+    public static String eiminarUsuario(Usuario u) {
+        PreparedStatement stm = null;
+        Connection cc = null;
+        String msj = "";
+
+        cc = c.getConnection();
+        try {
+            String sql = "delete into usuarios (id) values (?)";
+            stm = (PreparedStatement) cc.prepareStatement(sql);
+            stm.setString(1, u.getId());
+ 
+            if (stm.executeUpdate() > 0)
+                msj = "el usuario se elimino exitosamente ";
+            else
+                msj = "el usuario no se puedo eliminar ";
+        } catch (Exception e) {
+            System.out.println(e);
+        } finally {
+            // vamos a liberar en este bloque todos los recursos empleando
+            // se hace en orden inverso a su creación
+            if (stm != null) {
+                try {
+                    stm.close();
+                } catch (SQLException sqlEx) {
+                    sqlEx.printStackTrace();
+                }
+                stm = null;
+            }
+            try {
+                cc.close();
+                System.out.println("Closed  connection!");
+            } catch (SQLException sqlEx) {
+                sqlEx.printStackTrace();
+            }
+        }
+
+        return msj;
+    }
+
+
+
+
+    
+
 }
 
